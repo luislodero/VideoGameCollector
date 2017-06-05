@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VideoGameCollector" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="VideoGameCollector" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,7 +21,20 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8eo-3a-ydL">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8eo-3a-ydL" secondAttribute="bottom" id="90G-rz-pGW"/>
+                            <constraint firstAttribute="trailing" secondItem="8eo-3a-ydL" secondAttribute="trailing" id="IeO-Bs-ZJr"/>
+                            <constraint firstItem="8eo-3a-ydL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="O7s-c6-fID"/>
+                            <constraint firstItem="8eo-3a-ydL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lb5-1D-m5d"/>
+                            <constraint firstItem="8eo-3a-ydL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="tLM-8V-v4S"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JP9-N7-JMH">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="xRB-xp-8xH">
@@ -30,6 +43,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="8eo-3a-ydL" id="1WB-zJ-ReC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -61,8 +77,8 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIO-UN-YRx">
-                                <rect key="frame" x="164" y="414" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="172" y="404" width="30" height="30"/>
+                                <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="addTapped:" destination="Kau-AM-NhQ" eventType="touchUpInside" id="0Cm-8y-i55"/>
                                 </connections>
@@ -70,7 +86,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="tIO-UN-YRx" firstAttribute="top" secondItem="mej-ZG-L2S" secondAttribute="bottom" constant="50" id="8pM-z2-Tl2"/>
+                            <constraint firstItem="tIO-UN-YRx" firstAttribute="top" secondItem="mej-ZG-L2S" secondAttribute="bottom" constant="40" id="8pM-z2-Tl2"/>
                             <constraint firstItem="coM-iy-x0j" firstAttribute="centerX" secondItem="zYH-Vy-I7m" secondAttribute="centerX" id="Fd4-sf-TKB"/>
                             <constraint firstItem="mej-ZG-L2S" firstAttribute="centerX" secondItem="zYH-Vy-I7m" secondAttribute="centerX" id="LI7-Gr-iLc"/>
                             <constraint firstItem="coM-iy-x0j" firstAttribute="top" secondItem="YBE-mK-rRa" secondAttribute="bottom" constant="20" id="Xkv-nf-j8L"/>
